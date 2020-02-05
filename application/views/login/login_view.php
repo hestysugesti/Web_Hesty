@@ -13,21 +13,17 @@
     <div class="container">
         <div class="col-md-4 col-md-offset-4">
           <form class="form-signin" action="<?php echo base_url("Login/aksi_login"); ?>" method="post">
-            <h2 class="form-signin-heading">Please sign in</h2>
+            <h2 class="form-signin-heading">Login Admin</h2>
             <?php echo $this->session->flashdata('msg');?>
             <label for="username" class="sr-only">Username</label>
             <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
             <label for="password" class="sr-only">Password</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="remember-me"> Remember me
-              </label>
-            </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
           </form>
 
-          <p>Belum punya akun? <a href="<?php echo base_url("login/registrasi"); ?>">Registrasi</a></p>
+          <!-- <p>Belum punya akun? <a href="<?php echo base_url("login/registrasi"); ?>">Registrasi</a></p> -->
+          <p>Login sebagai mahasiswa <a href="<?= site_url("loginmhs"); ?>">disini</a></p>
         </div>
         </div> <!-- /container -->
  

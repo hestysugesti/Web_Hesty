@@ -14,7 +14,6 @@ class Login extends CI_Controller
 		$data ['title'] = "Login";
 		$this->load->view('headadm',$data);
 		$this->load->view('login/login_view');
-		$this->load->view('footadm');
     }
 
     public function aksi_login()
@@ -25,7 +24,7 @@ class Login extends CI_Controller
                     'username' => $username,
                     'password' => $password);
 
-        $cek = $this->ModelLogin->cek_login("login", $where)->num_rows();
+        $cek = $this->ModelLogin->cek_login("admin", $where)->num_rows();
         if($cek > 0) {
             $data_session = array(
                 'nama' => $username,
@@ -53,21 +52,5 @@ class Login extends CI_Controller
         $data ['title'] = "Registrasi";
         $this->load->view('headadm',$data);
         $this->load->view('login/registrasi_view');
-        $this->load->view('footadm');
-    }
-
-    public function aksi_register()
-    {
-        $username = $this->input->post("username");
-        $password = $this->input->post("password");
-        $type = $this->input->post("options");
-
-        $data = array(
-            'username' => $username,
-            'password' => $password,
-            'type' => $type
-        );
-        $this->ModelLogin->tambah_data($data,"login");
-        redirect('login');   
     }
 }

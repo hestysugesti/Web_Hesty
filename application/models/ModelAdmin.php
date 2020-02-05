@@ -9,7 +9,7 @@ class ModelAdmin extends CI_model
 	}
 
 	function tampilkan_data(){
-		return $this->db->get("data_mahasiswa")->result();
+		return $this->db->get("mahasiswa")->result();
 		// $this->db->query("SELECT * FROM")
 	}
 	
@@ -26,5 +26,10 @@ class ModelAdmin extends CI_model
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+
+	public function data_mhs_fetch($npm)
+    {
+        return $this->db->query("SELECT * FROM mahasiswa WHERE npm = '" . $npm . "'")->result_array();
+    }
 }
 ?>
